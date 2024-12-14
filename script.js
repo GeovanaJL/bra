@@ -71,7 +71,7 @@ const bras = [
   }, // alterado para Amarelo
   {
     name: "BraEncChat",
-    description: "Agradecer por usar o chat ao vivo.",
+    description: "Agradecer por usar o chat ao vivo e encerrar o chat.",
     color: "Azul",
   },
   {
