@@ -161,8 +161,7 @@ button:hover {
 }
 
 .amarelo {
-  background-color: #fdd835;
-  color: #333;
+  background-color: #66bb6a; /* Verde Claro */
 }
 
 .laranja {
@@ -174,7 +173,8 @@ button:hover {
 }
 
 .verdeclaro {
-  background-color: #66bb6a;
+  background-color: #fdd835; /* Amarelo */
+  color: #333;
 }
 
 .cinza {

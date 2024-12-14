@@ -32,8 +32,8 @@ const bras = [
   {
     name: "BraInconveniencia",
     description: "Pedir desculpas por qualquer inconveniente.",
-    color: "Amarelo",
-  },
+    color: "Verde Claro",
+  }, // alterado para Verde Claro
   {
     name: "BraIntroAcesso",
     description: "Assistência para problemas de acesso à conta.",
@@ -57,18 +57,18 @@ const bras = [
   {
     name: "BraAguardCliente1",
     description: "Perguntar se precisa de mais assistência.",
-    color: "Verde Claro",
-  },
+    color: "Amarelo",
+  }, // alterado para Amarelo
   {
     name: "BraAguardCliente2",
     description: "Informar que está aguardando resposta do cliente.",
-    color: "Verde Claro",
-  },
+    color: "Amarelo",
+  }, // alterado para Amarelo
   {
     name: "BraAlgoMais",
     description: "Oferecer ajuda adicional.",
-    color: "Verde Claro",
-  },
+    color: "Amarelo",
+  }, // alterado para Amarelo
   {
     name: "BraEncChat",
     description: "Agradecer por usar o chat ao vivo.",
@@ -97,8 +97,8 @@ const bras = [
   {
     name: "BraMaisAssistencia",
     description: "Verificar se o cliente precisa de mais ajuda.",
-    color: "Verde Claro",
-  },
+    color: "Amarelo",
+  }, // alterado para Amarelo
   {
     name: "BraSemResposta1",
     description: "Perguntar se o cliente deseja continuar com o chat.",
@@ -517,6 +517,17 @@ let score = 0;
 let phase = 1;
 const questionsPerPhase = 15;
 
+// Função para embaralhar o array de perguntas
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// Embaralhar as perguntas ao carregar a página
+shuffleArray(bras);
+
 function loadQuestion() {
   const questionElement = document.getElementById("question");
   const optionsElement = document.getElementById("options");
@@ -524,6 +535,8 @@ function loadQuestion() {
   const submitButton = document.getElementById("submit-btn");
   const showAnswerButton = document.getElementById("show-answer-btn");
   const nextButton = document.getElementById("next-btn");
+  const restartButton = document.getElementById("restart-btn");
+  const endButton = document.getElementById("end-btn");
   const currentBra = bras[currentQuestion];
 
   if (phase === 1) {
@@ -533,6 +546,8 @@ function loadQuestion() {
     submitButton.style.display = "none";
     showAnswerButton.style.display = "none";
     nextButton.style.display = "none";
+    restartButton.style.display = "none";
+    endButton.style.display = "none";
 
     // Selecionar uma opção de cada categoria de cor
     const uniqueColors = [...new Set(bras.map((bra) => bra.color))];
@@ -642,13 +657,13 @@ function getColorByName(colorName) {
     case "verde":
       return "#43a047";
     case "amarelo":
-      return "#fdd835";
+      return "#66bb6a"; // Agora usa verde claro
     case "laranja":
       return "#fb8c00";
     case "vermelho":
       return "#e53935";
     case "verde claro":
-      return "#66bb6a";
+      return "#fdd835"; // Agora usa amarelo
     case "cinza":
       return "#757575";
     case "marrom":
@@ -677,6 +692,28 @@ function showResults() {
   document.getElementById("show-answer-btn").style.display = "none";
   document.getElementById("next-btn").style.display = "none";
   document.getElementById("feedback").style.display = "none";
+  document.getElementById("restart-btn").style.display = "block";
+  document.getElementById("end-btn").style.display = "block";
+}
+
+function restartQuiz() {
+  currentQuestion = 0;
+  score = 0;
+  phase = 1;
+  shuffleArray(bras); // Embaralhar as perguntas novamente
+  loadQuestion();
+  document.getElementById("restart-btn").style.display = "none";
+  document.getElementById("end-btn").style.display = "none";
+}
+
+function endQuiz() {
+  alert(
+    "Parabéns pela dedicação nos estudos! Continue se dedicando e até logo!"
+  );
+  document.getElementById("question").textContent = "Obrigado por jogar!";
+  document.getElementById("score").style.display = "none";
+  document.getElementById("restart-btn").style.display = "none";
+  document.getElementById("end-btn").style.display = "none";
 }
 
 loadQuestion();
