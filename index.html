@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memorize os BRAs</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="quiz-container">
+      <div id="score">Pontuação: 0</div>
+      <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+      </div>
+      <div id="question" class="question">Carregando pergunta...</div>
+      <div id="options" class="options"></div>
+      <input
+        type="text"
+        id="answer"
+        placeholder="Digite o nome do BRA"
+        class="answer-input"
+        style="display: none"
+      />
+      <button id="submit-btn" onclick="submitAnswer()" style="display: none">
+        Enviar
+      </button>
+      <button id="show-answer-btn" onclick="showAnswer()" style="display: none">
+        Mostrar resposta
+      </button>
+      <button id="next-btn" onclick="nextQuestion()" style="display: none">
+        Avançar
+      </button>
+      <div id="feedback" class="feedback"></div>
+      <div id="legend" class="legend">
+        <h4>Legenda das Cores</h4>
+        <ul>
+          <li><span class="color-box azul"></span>Azul - Contato</li>
+          <li><span class="color-box verde"></span>Verde - Atualização</li>
+          <li><span class="color-box amarelo"></span>Amarelo - Desculpas</li>
+          <li>
+            <span class="color-box laranja"></span>Laranja - Transferência
+          </li>
+          <li><span class="color-box vermelho"></span>Vermelho - Segurança</li>
+          <li>
+            <span class="color-box verdeclaro"></span>Verde Claro - Assistência
+          </li>
+          <li><span class="color-box cinza"></span>Cinza - Resposta</li>
+          <li><span class="color-box marrom"></span>Marrom - Encerramento</li>
+          <li><span class="color-box roxo"></span>Roxo - Aposta</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
