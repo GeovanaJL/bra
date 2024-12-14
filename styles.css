@@ -160,7 +160,7 @@ button:hover {
   background-color: #43a047;
 }
 
-.verdeclaro {
+.amarelo {
   background-color: #66bb6a; /* Verde Claro */
 }
 
@@ -172,7 +172,7 @@ button:hover {
   background-color: #e53935;
 }
 
-.amarelo {
+.verdeclaro {
   background-color: #fdd835; /* Amarelo */
   color: #333;
 }
