@@ -1,189 +1,180 @@
 body {
-    font-family: "Arial", sans-serif;
-    background-color: #002147; /* Fundo azul escuro */
-    margin: 0;
-    padding: 0;
-    color: #333; /* Texto em cinza escuro */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  font-family: "Arial", sans-serif;
+  background-color: #002147; /* Fundo azul escuro */
+  margin: 0;
+  padding: 0;
+  color: #333; /* Texto em cinza escuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .quiz-container {
-    max-width: 800px;
-    width: 100%;
-    background-color: #ffffff; /* Fundo branco para contraste */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin: 20px;
+  max-width: 800px;
+  width: 100%;
+  background-color: #ffffff; /* Fundo branco para contraste */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 20px;
 }
 
 #score {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #0056b3; /* Azul principal */
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #0056b3; /* Azul principal */
 }
 
 #progress-bar-container {
-    width: 100%;
-    background-color: #d0e2f4;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 20px;
+  width: 100%;
+  background-color: #d0e2f4;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 #progress-bar {
-    height: 10px;
-    width: 0;
-    background-color: #007bff; /* Azul para progresso */
+  height: 10px;
+  width: 0;
+  background-color: #007bff; /* Azul para progresso */
 }
 
 .question {
-    font-size: 28px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
 }
 
 .question-highlight {
-    color: #0056b3; /* Azul para destaque */
-    font-weight: 700; /* Peso da fonte aumentado para destaque */
+  color: #0056b3; /* Azul para destaque */
+  font-weight: 700; /* Peso da fonte aumentado para destaque */
 }
 
 .option {
-    display: block;
-    margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
-    font-size: 18px;
-    color: #333; /* Texto em cinza escuro */
-    background-color: #e0e0e0; /* Cor de fundo claro */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+  font-size: 18px;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.option.azul {
+  background-color: #007bff;
+}
+.option.verde {
+  background-color: #43a047;
+}
+.option.amarelo {
+  background-color: #ffc107;
+}
+.option.laranja {
+  background-color: #ff9800;
+}
+.option.vermelho {
+  background-color: #f44336;
+}
+.option.verdeclaro {
+  background-color: #cddc39;
+}
+.option.cinza {
+  background-color: #9e9e9e;
+}
+.option.marrom {
+  background-color: #795548;
+}
+.option.roxo {
+  background-color: #9c27b0;
 }
 
 .option:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 .option.correct {
-    border: 3px solid #43a047;
-    background-color: #66bb6a;
-    box-shadow: 0 0 10px #43a047;
-    animation: correctPulse 0.5s infinite alternate;
+  border: 3px solid #43a047;
+  background-color: #66bb6a;
+  box-shadow: 0 0 10px #43a047;
+  animation: correctPulse 0.5s infinite alternate;
 }
 
 .option.wrong {
-    border: 3px solid #f44336;
-    background-color: #e57373;
-    box-shadow: 0 0 10px #f44336;
-    animation: wrongShake 0.5s;
+  border: 3px solid #f44336;
+  background-color: #e57373;
+  box-shadow: 0 0 10px #f44336;
+  animation: wrongShake 0.5s;
 }
 
 @keyframes correctPulse {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.05);
-    }
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
 }
 
 @keyframes wrongShake {
-    0% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-5px);
-    }
-    50% {
-        transform: translateX(5px);
-    }
-    75% {
-        transform: translateX(-5px);
-    }
-    100% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .answer-input {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: calc(100% - 22px);
-    margin-bottom: 20px;
-    color: #333;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: calc(100% - 22px);
+  margin-bottom: 20px;
+  color: #333;
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #0056b3;
-    color: #fff;
-    cursor: pointer;
-    margin: 10px;
-    transition: background-color 0.3s;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0056b3;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #003d80; /* Azul mais escuro para hover */
+  background-color: #003d80; /* Azul mais escuro para hover */
 }
 
 .feedback {
-    font-size: 20px;
-    margin-top: 20px;
-    color: #333;
+  font-size: 20px;
+  margin-top: 20px;
+  color: #333;
 }
 
 .correct {
-    color: #43a047;
+  color: #43a047;
 }
 
 .wrong {
-    color: #f44336;
-}
-
-.footer {
-    background-color: #ffffff; /* Fundo branco */
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: auto;
-}
-
-.footer p {
-    font-size: 16px;
-    color: #333;
-    margin: 0 0 10px 0;
-}
-
-.footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer li {
-    display: inline;
-    margin: 0 10px;
-}
-
-.footer a {
-    text-decoration: none;
-    color: #0056b3;
-    font-weight: bold;
-}
-
-.footer a:hover {
-    text-decoration: underline;
+  color: #f44336;
 }
