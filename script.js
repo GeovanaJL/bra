@@ -381,7 +381,7 @@ const bras = [
   },
   {
     name: "BraParceria",
-    description: "Informações para se tornar parceiro da bet365.",
+    description: "Informações para se tornar parceiro.",
     color: "Azul",
   },
   {
