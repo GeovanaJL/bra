@@ -178,3 +178,47 @@ button:hover {
 .wrong {
   color: #f44336;
 }
+.footer {
+    background-color: #002147;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Query para dispositivos móveis */
+@media (max-width: 600px) {
+    .footer p {
+        font-size: 12px;
+    }
+}
